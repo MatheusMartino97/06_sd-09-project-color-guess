@@ -1,8 +1,6 @@
 body {
-  align-items: center;
   display: flex;
   justify-content: center;
-  height: 75vh;
   text-align: center;
 }
 
@@ -39,4 +37,20 @@ body {
 
 .score-board {
   margin: 16px;
+}
+
+.line {
+  margin: 10px;
+}
+
+.buttons {
+  margin: 10px;
+}
+
+#rgb-color {
+  display: inline-block;
+  background: -webkit-linear-gradient(0deg, black, black,red, red,green, green,blue, blue);
+  text-decoration: line-through;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

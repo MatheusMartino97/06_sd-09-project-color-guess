@@ -104,10 +104,58 @@ function updateCurrentHighestScore() {
   }
 }
 
+function createLine() {
+  const line = document.createElement('div')
+
+  line.className = 'line'
+
+  for (let i = 0; i < 6; i++) {
+    const ball = document.createElement('div')
+
+    ball.className = 'ball'
+    line.appendChild(ball)
+  }
+
+  return line
+}
+
+function clearBallsSection() {
+  const ballsSection = document.querySelector('.balls')
+  const linesNodeList = document.querySelectorAll('.balls .line')
+
+  linesNodeList.forEach((line) => {
+    ballsSection.removeChild(line)
+  })
+}
+
+function listenToChangeLevelButton() {
+  const changeLevelButton = document.querySelector('#change-level')
+  const ballsSection = document.querySelector('.balls')
+
+  changeLevelButton.addEventListener('click', () => {
+    const linesNodeList = document.querySelectorAll('.balls .line')
+
+    if (linesNodeList.length === 3) {
+      clearBallsSection()
+
+      ballsSection.appendChild(createLine())
+
+      paintTheBalls()
+    } else {
+      ballsSection.appendChild(createLine())
+
+      paintTheBalls()
+    }
+
+    setTheCurrentColor()
+  })
+}
+
 window.onload = () => {
   loadHighestScore();
   paintTheBalls();
   listenToResetGameButton();
   setTheCurrentColor();
   listenToBallsSection();
+  listenToChangeLevelButton();
 };
