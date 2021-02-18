@@ -28,6 +28,7 @@ function listenToResetGameButton() {
   resetGameButton.addEventListener('click', () => {
     paintTheBalls();
     setTheCurrentColor();
+    
     answerText.innerText = 'Escolha uma cor';
   });
 }
@@ -43,7 +44,7 @@ function listenToBallsSection() {
       if (
         event.target.style.backgroundColor === currentColorTextElement.innerText
       ) {
-        scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1;
+        scoreSpan.innerText = parseInt(scoreSpan.innerText) + 3;
         answerText.innerText = 'Acertou!';
 
         paintTheBalls();
