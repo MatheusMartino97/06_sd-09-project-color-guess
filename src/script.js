@@ -28,7 +28,7 @@ function listenToResetGameButton() {
   resetGameButton.addEventListener('click', () => {
     paintTheBalls();
     setTheCurrentColor();
-    
+
     answerText.innerText = 'Escolha uma cor';
   });
 }
@@ -56,8 +56,8 @@ function listenToBallsSection() {
 
         answerText.innerText = 'Errou! Tente novamente!';
 
-        paintTheBalls();
-        setTheCurrentColor();
+        // paintTheBalls();
+        // setTheCurrentColor();
       }
     }
   });
