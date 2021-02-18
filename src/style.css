@@ -29,10 +29,14 @@ body {
   height: 50px;
   margin: 0 10px;
   transform: rotate(-45deg);
+  transition: 0.5s;
   width: 50px;
 }
 
 .ball:hover {
   border-radius: 50% 50% 50% 0;
-  transition: 0.5s;
+}
+
+.score-board {
+  margin: 16px;
 }
