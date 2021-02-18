@@ -56,6 +56,12 @@ function updateHighestScore() {
   }
 }
 
+function levelOfDifficulty() {
+  const linesNodeList = document.querySelectorAll('.balls .line')
+
+  return linesNodeList.length
+}
+
 function listenToBallsSection() {
   const ballsSection = document.querySelector(".balls");
   const currentColorTextElement = document.querySelector("#rgb-color");
@@ -67,7 +73,7 @@ function listenToBallsSection() {
       if (
         event.target.style.backgroundColor === currentColorTextElement.innerText
       ) {
-        scoreSpan.innerText = parseInt(scoreSpan.innerText) + 3;
+        scoreSpan.innerText = parseInt(scoreSpan.innerText) + levelOfDifficulty();
         answerText.innerText = "Acertou!";
 
         paintTheBalls();
@@ -92,7 +98,10 @@ function loadHighestScore() {
   const highestScoreSpan = document.querySelector("#highest-score");
   const highestScoreStorage = localStorage.getItem("highestScore");
 
-  highestScoreSpan.innerText = highestScoreStorage;
+  if (highestScoreStorage) {
+    highestScoreSpan.innerText = highestScoreStorage;
+  }
+
 }
 
 function updateCurrentHighestScore() {
