@@ -50,7 +50,6 @@ body {
 #rgb-color {
   display: inline-block;
   background: -webkit-linear-gradient(0deg, black, black,red, red,green, green,blue, blue);
-  text-decoration: line-through;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
